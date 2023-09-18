@@ -32,7 +32,7 @@ print(settings.database_hostname)
 
 @app.get("/")
 def root():
-    return {"data" : "Hello World !!!!!"}
+    return {"message" : "Hello World"}
 
 
 
