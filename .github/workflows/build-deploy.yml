@@ -80,12 +80,11 @@ jobs:
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
-          key: ${{ secrets.KEY }}
+          password: ${{secrets.PROD_PASSWORD}}
+          #key: ${{ secrets.KEY }}
           #port: ${{ secrets.PORT }}
           script: 
             |
-            whoami
-            echo ${{secrets.PROD_PASSWORD}} | su - hash
             whoami
             cd app/src
             git pull
