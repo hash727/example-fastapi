@@ -75,17 +75,13 @@ jobs:
     environment:
       name: production
     steps:
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@v1.0.0
+      - name: deploy to ubuntu server
+        uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USERNAME }}
+          host: ${{secrets.PROD_HOST}}
+          username: ${{secrets.PROD_USERNAME}}
           password: ${{secrets.PROD_PASSWORD}}
-          #key: ${{ secrets.KEY }}
-          #port: ${{ secrets.PORT }}
-          script: 
-            |
-            whoami
+          script: |
             cd app/src
             git pull
             echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
