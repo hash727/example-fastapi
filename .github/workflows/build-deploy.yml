@@ -12,7 +12,7 @@ jobs:
       DATABASE_PASSWORD: admin
       DATABASE_USERNAME: postgres
       DATABASE_NAME: fastapi
-      SECRETE_KEY: 4806fc9919e9b3691c81b048bb1090475fd02644484434c05d319b76515f522c
+      SECRET_KEY: 4806fc9919e9b3691c81b048bb1090475fd02644484434c05d319b76515f522c
       ALGORITHM: HS256
       ACCESS_TOKEN_EXPIRE_MINUTES: 30
     
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pulling git repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install python 3.11
         uses: actions/setup-python@v4
         with:
